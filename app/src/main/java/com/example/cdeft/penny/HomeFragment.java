@@ -12,13 +12,19 @@ import android.view.ViewGroup;
  */
 public class HomeFragment extends Fragment {
     View view;
-
+    MainActivity mainActivity;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.home_fragment,container);
-
+        view = inflater.inflate(R.layout.home_fragment,container,false);
+        setupToolbar();
 
         return view;
+    }
+
+    private void setupToolbar() {
+        mainActivity = new MainActivity();
+        mainActivity.toolbarTitle.setText("Penny");
+
     }
 }
